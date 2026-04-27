@@ -9,6 +9,7 @@ interface ProjectCardProps {
   imageSrc: string;
   accentColor: "blue" | "purple" | "green";
   stats?: { label: string; value: string }[];
+  href: string;
 }
 
 export const ProjectCard = ({
@@ -17,6 +18,7 @@ export const ProjectCard = ({
   imageSrc,
   accentColor,
   stats,
+  href,
 }: ProjectCardProps) => {
   const themes = {
     blue: {
@@ -114,7 +116,7 @@ export const ProjectCard = ({
               )}
             </div>
 
-            <Link href="/case-studies/dualasset">
+            <Link href={href}>
               <button className="mt-4 flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-2 text-xs font-bold text-white transition-all hover:bg-white hover:text-black">
                 View Case Study <span className="text-lg">→</span>
               </button>

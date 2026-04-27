@@ -60,6 +60,7 @@ export default function Page() {
               description="Simplified trading for the next generation of investors. Focus on clarity and performance."
               imageSrc="/images/logo.jpeg"
               accentColor="blue"
+              href="/case-studies/dualasset"
             />
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -68,6 +69,7 @@ export default function Page() {
                 description="Secure credentialing system built on private ledger technology."
                 imageSrc="/images/mydigitalcenter_logo.jpg"
                 accentColor="purple"
+                href="/case-studies/mydc"
                 stats={[
                   { label: "Network", value: "Ethereum" },
                   { label: "Security", value: "SSL-Grade" },
@@ -78,6 +80,7 @@ export default function Page() {
                 description="Internal enterprise resource planning and automation tool."
                 imageSrc="/images/razermerchantservices_logo.jpg"
                 accentColor="green"
+                href="/case-studies/fiuu"
                 stats={[
                   { label: "Efficiency", value: "+42%" },
                   { label: "Users", value: "500+ Staff" },
