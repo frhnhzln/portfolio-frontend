@@ -58,13 +58,13 @@ export default function Page() {
             <ProjectCard
               title="INGOTS DUAL ASSET"
               description="Simplified trading for the next generation of investors. Focus on clarity and performance."
-              imageSrc="/images/ingots-platform.png"
+              imageSrc="/images/logo.jpeg"
               accentColor="blue"
             />
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <ProjectCard
-                title="BLOCKCHAIN MYCERT"
+                title="BLOCKCHAIN AS A SERVICE (BAAS)"
                 description="Secure credentialing system built on private ledger technology."
                 imageSrc="/images/mycert.jpg"
                 accentColor="purple"
