@@ -66,7 +66,7 @@ export default function Page() {
               <ProjectCard
                 title="BLOCKCHAIN AS A SERVICE (BAAS)"
                 description="Secure credentialing system built on private ledger technology."
-                imageSrc="/images/mycert.jpg"
+                imageSrc="/images/mydigitalcenter_logo.jpg"
                 accentColor="purple"
                 stats={[
                   { label: "Network", value: "Ethereum" },
@@ -76,7 +76,7 @@ export default function Page() {
               <ProjectCard
                 title="EPR-FORM AUTOLIV"
                 description="Internal enterprise resource planning and automation tool."
-                imageSrc="/images/erp.jpg"
+                imageSrc="/images/razermerchantservices_logo.jpg"
                 accentColor="green"
                 stats={[
                   { label: "Efficiency", value: "+42%" },
