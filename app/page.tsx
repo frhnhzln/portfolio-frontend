@@ -65,7 +65,7 @@ export default function Page() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <ProjectCard
-                title="BLOCKCHAIN AS A SERVICE (BAAS)"
+                title="BAAS"
                 description="Secure credentialing system built on private ledger technology."
                 imageSrc="/images/mydigitalcenter_logo.jpg"
                 accentColor="purple"
@@ -76,8 +76,8 @@ export default function Page() {
                 ]}
               />
               <ProjectCard
-                title="EPR-FORM AUTOLIV"
-                description="Internal enterprise resource planning and automation tool."
+                title="JKOPAY"
+                description="Merchant payment"
                 imageSrc="/images/razermerchantservices_logo.jpg"
                 accentColor="green"
                 href="/case-studies/fiuu"
