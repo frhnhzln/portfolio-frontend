@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   Bell,
@@ -17,13 +18,15 @@ export default function DualAssetCaseStudy() {
   return (
     <div className="min-h-screen bg-[#0b0f17] text-white px-8 py-20">
       {/*back btn*/}
-        <button
-            onClick={() => router.back()}
-            className="flex items-center gap-2 text-gray-400 hover:text-white mb-10"
-            >
-            <ArrowLeft size={18} />
-            Back
-        </button>
+        <nav className="max-w-6xl mx-auto mb-12">
+          <Link 
+            href="/" 
+            className="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-teal-400 transition-colors group"
+          >
+            <ArrowLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
+            Back to Home
+          </Link>
+        </nav>
       {/* HERO */}
       <section className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
