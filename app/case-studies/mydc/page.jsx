@@ -89,7 +89,7 @@ export default function MydcCaseStudy() {
           <div className="relative group">
             <div className="absolute -inset-1 bg-purple-500/20 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
             <Image 
-              src="/images/baas-hero.png" 
+              src="/images/baas-hero2.png" 
               width={600}
               height={400}
               alt="BaaS Platform Hero" 
