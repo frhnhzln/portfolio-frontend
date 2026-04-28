@@ -6,13 +6,13 @@ export const ProfileCard = () => {
   return (
     <div className="flex flex-col items-center gap-4">
       {/* Profile Image Container */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         className="relative h-32 w-32 md:h-44 md:w-44 rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm shadow-2xl shadow-blue-500/10"
       >
         <Image
-          src="/images/profile.jpg" // Updated to match your directory structure
+          src="/images/profile.JPG" // Updated to match your directory structure
           alt="Farhan Hazlan"
           fill
           priority
@@ -27,7 +27,7 @@ export const ProfileCard = () => {
         <h2 className="text-white text-xl md:text-2xl font-bold tracking-tight">
           Farhan<span className="text-blue-500">Hazlan</span>
         </h2>
-        <motion.div 
+        <motion.div
           initial={{ width: 0 }}
           animate={{ width: "2rem" }}
           className="h-1 bg-blue-500 mx-auto mt-1 rounded-full"
