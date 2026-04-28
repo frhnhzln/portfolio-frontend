@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 // Bidirectional Arrow with Request/Response Motion
 const FlowArrow = ({ direction = "horizontal", length = 80 }) => {
@@ -65,7 +66,7 @@ export const SkillsetCard = () => {
     { label: "Database", skills: ["PostgreSQL", "MongoDB", "Redis", "Supabase"], lineColor: "border-purple-500/30" },
   ];
 
-  const skillVariant = {
+  const skillVariant: Variants = {
     hidden: { opacity: 0, x: -30, filter: "blur(8px)" },
     visible: (i: number) => ({
       opacity: 1, x: 0, filter: "blur(0px)",
