@@ -6,18 +6,17 @@ import type { Variants } from "framer-motion";
 // Bidirectional Arrow with Request/Response Motion
 const FlowArrow = ({ direction = "horizontal", length = 80 }) => {
   const isHorizontal = direction === "horizontal";
-  
   return (
     <div className={`relative flex items-center justify-center ${isHorizontal ? 'px-4' : 'py-4'}`}>
-      <svg 
-        width={isHorizontal ? length : 40} 
-        height={isHorizontal ? 40 : length} 
-        viewBox={`0 0 ${isHorizontal ? length : 40} ${isHorizontal ? 40 : length}`} 
+      <svg
+        width={isHorizontal ? length : 40}
+        height={isHorizontal ? 40 : length}
+        viewBox={`0 0 ${isHorizontal ? length : 40} ${isHorizontal ? 40 : length}`}
       >
         {/* REQUEST PATH (Forward) */}
-        <path 
-          d={isHorizontal ? `M0 15H${length}` : `M15 0V${length}`} 
-          stroke="rgba(255,255,255,0.05)" strokeWidth="1" 
+        <path
+          d={isHorizontal ? `M0 15H${length}` : `M15 0V${length}`}
+          stroke="rgba(255,255,255,0.05)" strokeWidth="1"
         />
         <motion.path
           d={isHorizontal ? `M0 15H${length}` : `M15 0V${length}`}
@@ -30,11 +29,10 @@ const FlowArrow = ({ direction = "horizontal", length = 80 }) => {
           d={isHorizontal ? `M${length-5} 10L${length} 15L${length-5} 20` : `M10 ${length-5}L15 ${length}L20 ${length-5}`}
           stroke="#3b82f6" strokeWidth="1.5" fill="none"
         />
-
         {/* RESPONSE PATH (Backward) */}
-        <path 
-          d={isHorizontal ? `M${length} 25H0` : `M25 ${length}V0`} 
-          stroke="rgba(255,255,255,0.05)" strokeWidth="1" 
+        <path
+          d={isHorizontal ? `M${length} 25H0` : `M25 ${length}V0`}
+          stroke="rgba(255,255,255,0.05)" strokeWidth="1"
         />
         <motion.path
           d={isHorizontal ? `M${length} 25H0` : `M25 ${length}V0`}
@@ -103,7 +101,7 @@ export const SkillsetCard = () => {
       {/* MAIN TECH STACK MODAL */}
       <AnimatePresence>
         {isOpen && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-2 sm:p-4">
             <motion.div
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
@@ -111,18 +109,17 @@ export const SkillsetCard = () => {
             />
             <motion.div
               layoutId="skill-container"
-              className="relative w-full max-w-3xl bg-[#0a0a0a] border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl overflow-hidden"
+              className="relative w-full max-w-3xl bg-[#0a0a0a] border border-white/10 rounded-[2.5rem] p-4 sm:p-8 md:p-12 shadow-2xl overflow-hidden"
             >
-               {/* ... (Header logic kept same) */}
-               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-16">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 md:mb-16">
                 <div className="flex items-center gap-6">
-                  <h2 className="text-4xl font-bold text-white tracking-tight">Tech Stack</h2>
-                  <button 
+                  <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight">Tech Stack</h2>
+                  <button
                     onClick={(e) => { e.stopPropagation(); setShowArchitecture(true); }}
                     className="relative group/btn cursor-pointer transition-transform active:scale-95"
                   >
                     <div className="absolute -inset-0.5 bg-white/20 rounded-full blur-md group-hover/btn:bg-blue-500/30 transition-all" />
-                    <div className="relative flex items-center gap-3 px-5 py-2 bg-white/10 border border-white/20 rounded-full backdrop-blur-xl">
+                    <div className="relative flex items-center gap-3 px-4 py-2 md:px-5 md:py-2 bg-white/10 border border-white/20 rounded-full backdrop-blur-xl">
                       <span className="text-[10px] font-bold text-gray-200 uppercase tracking-widest">Current Stack</span>
                       <div className="relative flex h-2 w-2">
                         <span className="animate-ping absolute h-full w-full rounded-full bg-blue-400 opacity-75"></span>
@@ -131,21 +128,21 @@ export const SkillsetCard = () => {
                     </div>
                   </button>
                 </div>
-                <button onClick={() => setIsOpen(false)} className="absolute top-8 right-8 text-gray-500 hover:text-white text-3xl">&times;</button>
+                <button onClick={() => setIsOpen(false)} className="fixed top-6 right-6 z-[120] bg-black/60 hover:bg-black/80 border border-white/10 rounded-full w-10 h-10 flex items-center justify-center text-2xl text-gray-300 hover:text-white transition-all md:absolute md:top-8 md:right-8" aria-label="Close">&times;</button>
               </div>
 
-              <div className="space-y-16">
+              <div className="space-y-10 md:space-y-16">
                 {groups.map((group, gIndex) => (
                   <div key={group.label} className="relative">
-                    <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-600 mb-8 font-mono">{group.label}</h4>
-                    <div className="relative flex items-center min-h-[50px]">
+                    <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-600 mb-4 md:mb-8 font-mono">{group.label}</h4>
+                    <div className="relative flex flex-col gap-4 md:flex-row md:items-center min-h-[50px]">
                       <motion.div initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 1 }}
-                        className={`absolute top-1/2 left-0 h-[1px] border-t border-dashed ${group.lineColor}`} 
+                        className={`absolute top-1/2 left-0 h-[1px] border-t border-dashed ${group.lineColor}`}
                       />
-                      <div className="flex flex-wrap gap-6 w-full relative z-10">
+                      <div className="flex flex-wrap gap-3 md:gap-6 w-full relative z-10">
                         {group.skills.map((skill, sIndex) => (
                           <motion.div key={skill} custom={sIndex + gIndex * 3} variants={skillVariant} initial="hidden" animate="visible"
-                            className="bg-[#050505] border border-white/10 px-6 py-2.5 rounded-xl shadow-xl hover:border-white/30 transition-all"
+                            className="bg-[#050505] border border-white/10 px-4 py-2 md:px-6 md:py-2.5 rounded-xl shadow-xl hover:border-white/30 transition-all"
                           >
                             <span className="text-xs font-mono font-bold text-gray-200 uppercase tracking-tighter">{skill}</span>
                           </motion.div>
@@ -164,7 +161,7 @@ export const SkillsetCard = () => {
       <AnimatePresence>
         {showArchitecture && (
           <div className="fixed inset-0 z-[110] flex items-center justify-center p-6">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               onClick={() => setShowArchitecture(false)}
               className="absolute inset-0 bg-blue-950/20 backdrop-blur-3xl"
@@ -179,19 +176,14 @@ export const SkillsetCard = () => {
                 <p className="text-blue-500 font-mono text-[10px] uppercase tracking-[0.3em] mb-2">Live Architecture</p>
                 <h3 className="text-2xl font-bold text-white uppercase tracking-tight">System Flow</h3>
               </div>
-
               <div className="flex flex-col items-center">
-                
                 {/* Top Row: React, Java, Postgres */}
                 <div className="flex items-center justify-center w-full">
-                  
                   {/* REACT */}
                   <div className="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-blue-400 font-mono text-xs font-bold">
                     REACT
                   </div>
-
                   <FlowArrow direction="horizontal" length={100} />
-
                   {/* JAVA (Center) */}
                   <div className="relative">
                     <div className="absolute -inset-1 bg-orange-500/20 blur-xl rounded-full" />
@@ -199,15 +191,12 @@ export const SkillsetCard = () => {
                       <span className="text-orange-400 font-black tracking-widest text-lg">API</span>
                     </div>
                   </div>
-
                   <FlowArrow direction="horizontal" length={100} />
-
                   {/* POSTGRES */}
                   <div className="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-purple-400 font-mono text-xs font-bold">
                     POSTGRES
                   </div>
                 </div>
-
                 {/* Vertical Drop: JAVA to JAVA (as per sketch) */}
                 <div className="flex flex-col items-center -mt-2">
                   <FlowArrow direction="vertical" length={80} />
@@ -215,10 +204,8 @@ export const SkillsetCard = () => {
                     JAVA
                   </div>
                 </div>
-
               </div>
-
-              <button 
+              <button
                 onClick={() => setShowArchitecture(false)}
                 className="mt-12 w-full py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl text-gray-400 font-mono text-[10px] uppercase tracking-widest transition-all"
               >
